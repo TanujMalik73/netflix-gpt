@@ -3,10 +3,14 @@ import MovieList from "./MovieList"
 
 
 const Secondarycontainer = () => {
-  const moviedata = useSelector((store)=>store.movies?.nowPlayingMovies)
+  const moviedata = useSelector((store)=>store.movies)
   return (
-    <div>
-      <MovieList title="Now Playing Movies" moviesdata={moviedata}/>
+    <div className=" -mt-56 relative z-20">
+      <MovieList title="Now Playing Movies" moviesdata={moviedata?.nowPlayingMovies}/>
+      <MovieList title="Top Rated" moviesdata={moviedata?.TopRated}/>
+      <MovieList title="Popular" moviesdata={moviedata?.Popular}/>
+      <MovieList title="Upcoming" moviesdata={moviedata?.Upcoming}/>
+
       {/* Movielist.js 
           MovieList.js*/}
 

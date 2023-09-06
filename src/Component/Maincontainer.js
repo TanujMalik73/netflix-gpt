@@ -10,7 +10,7 @@ const Maincontainer = () => {
   const{original_title,overview,id}=MainMovie;
 
   return (
-    <div >
+    <div>
       {/* -backgroudvideo
             -Maincontainertitle */}
       <Maincontainertitle title={original_title} overview={overview}/>
