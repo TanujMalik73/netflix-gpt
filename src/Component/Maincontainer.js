@@ -5,7 +5,7 @@ import Maincontainertitle from "./Maincontainertitle";
 const Maincontainer = () => {
   const movie = useSelector((store) => store.movies?.nowPlayingMovies);
   if (!movie) return;
-  const MainMovie = movie[0];
+  const MainMovie = movie[2];
 
   const{original_title,overview,id}=MainMovie;
 
