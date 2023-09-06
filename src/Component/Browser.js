@@ -1,11 +1,27 @@
-import React from 'react'
+
+import useNowPlayingMovies from '../hooks/usenowPlayingMovies';
 import Header from './Header'
+import Maincontainer from './Maincontainer';
+import Secondarycontainer from './Secondarycontainer';
+
 
 const Browser = () => {
+  useNowPlayingMovies();
+    // usenowPlayingMovies Hook
+    //fetch data && update store
   return (
     <div>
       <Header/>
-      Browser</div>
+      <Maincontainer/>
+      <Secondarycontainer/>
+      {/* -Maincontainer
+              -backgroudvideo
+              -maintitle        
+          -seconderycontainer
+              -        
+      
+      */}
+      </div>
   )
 }
 
