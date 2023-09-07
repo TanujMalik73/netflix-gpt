@@ -9,3 +9,8 @@ export const Api_options = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYmRiMjFiNzE5Y2UwMjc4ZjZkMzE3ZmRhMDFjNTdjMiIsInN1YiI6IjY0ZjY3NzA4NWYyYjhkMDBlMTJjZjNiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vXKHAsaM56Xb8zM9-cVDj8qRDycrE44sMXiYOZoj9Pw'
     }
   };
+  export const SUPPORTED_LANGUAGES = [
+    { identifier: "en", name: "English" },
+    { identifier: "hindi", name: "Hindi" },
+    { identifier: "spanish", name: "Spanish" },
+  ];

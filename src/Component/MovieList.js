@@ -5,7 +5,7 @@ const MovieList = ({ title, moviesdata }) => {
   console.log(moviesdata);
   return (
     <div className="ml-6">
-      <h1 className="text-black p-4 font-bold font-mono text-white text-xl  ">{title}</h1>
+      <h1 className=" p-4 font-bold font-mono text-white text-xl  ">{title}</h1>
       <div className="flex overflow-x-scroll no-scrollbar">
         <div className=" flex mx-4 space-x-4">
           {moviesdata!==null&& moviesdata.map((data) => {

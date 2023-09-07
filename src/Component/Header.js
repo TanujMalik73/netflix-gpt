@@ -4,22 +4,26 @@ import { auth } from "../util/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { adduser, removeuser } from "../util/userSlice";
-import { logoURl } from "../util/constants";
+import { SUPPORTED_LANGUAGES, logoURl } from "../util/constants";
+import { togglegptsearch } from "../util/Gptslice";
+import { changelang } from "../util/confiqSlice";
 
 const Header = () => {
-
   const dispatch = useDispatch();
-  const user = useSelector((store)=>store.user)
+  const user = useSelector((store) => store.user);
+  const showgpt = useSelector((store)=>store.gpt.ShowgptSearch)
 
   const navigate = useNavigate();
 
   const handlesignout = () => {
     signOut(auth)
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => {
         navigate("/error");
       });
+  };
+  const toggleGpt = () => {
+    dispatch(togglegptsearch());
   };
 
   useEffect(() => {
@@ -45,27 +49,41 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
-
   return (
     <div className="flex z-30 absolute w-screen bg-gradient-to-b from-black justify-between p-6">
-      <img
-        className="w-48"
-        src={logoURl}
-        alt="logo"
-      />
-    { user&&<div>
-        <img
-          className="w-12 h-12 rounded-lg"
-          src={user?.photoURL}
-          alt="userphoto"
-        ></img>
-        <button
-          onClick={handlesignout}
-          className="text-white font-bold cursor-pointer"
-        >
-          (Sign out)
-        </button>
-      </div>}
+      <img className="w-48" src={logoURl} alt="logo" />
+      {user && (
+        <div className="flex mx-3">
+
+          {showgpt&&<select onClick={(e)=>{dispatch(changelang(e.target.value))}} className="w-20 h-8 bg-gray-700">
+            {SUPPORTED_LANGUAGES.map((lang) => (
+              <option key={lang.identifier} value={lang.identifier}>
+                {lang.name}
+              </option>
+            ))}
+          </select>}
+
+          <button
+            onClick={toggleGpt}
+            className="bg-red-500 text-white h-12 p-3 mx-5 font-mono font-bold rounded-lg"
+          >
+            {showgpt?"Movies":"GPT Search"}
+          </button>
+          <div>
+            <img
+              className="w-12 h-12 rounded-lg"
+              src={user?.photoURL}
+              alt="userphoto"
+            ></img>
+            <button
+              onClick={handlesignout}
+              className="text-white font-bold cursor-pointer"
+            >
+              Sign out
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

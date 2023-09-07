@@ -12,7 +12,7 @@ const Body = () => {
     {
       path: "/browser",
       element: <Browser />,
-    },
+    },    
   ]);
   return (
     <div>
