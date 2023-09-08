@@ -85,12 +85,12 @@ const Login = () => {
       <Header />
       <div>
         <img
-          className="absolute"
+          className="absolute min-h-screen object-cover"
           src={backgroundimgURL}
           alt="backgroundimg"
         />
       </div>
-      <div className=" absolute w-1/4 mx-auto left-0 right-0 my-48 p-12 bg-black bg-opacity-80 rounded-lg ">
+      <div className=" absolute md:w-1/4 mx-auto left-0 right-0 my-48 p-12 bg-black bg-opacity-80 rounded-lg ">
         <h1 className="font-bold text-3xl text-white mb-4">
           {signinout ? "Sign In" : "Sign up"}
         </h1>

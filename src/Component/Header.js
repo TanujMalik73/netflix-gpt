@@ -50,12 +50,12 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex z-30 absolute w-screen bg-gradient-to-b from-black justify-between p-6">
-      <img className="w-48" src={logoURl} alt="logo" />
+    <div className="flex flex-col md:flex-row z-30 absolute w-screen bg-gradient-to-b from-black justify-between p-6">
+      <img className="w-48 mx-auto md:mx-0" src={logoURl} alt="logo" />
       {user && (
-        <div className="flex mx-3">
+        <div className="flex mx-auto my-10 md:mx-3 md:my-3">
 
-          {showgpt&&<select onClick={(e)=>{dispatch(changelang(e.target.value))}} className="w-20 h-8 bg-gray-700">
+          {showgpt&&<select onClick={(e)=>{dispatch(changelang(e.target.value))}} className="bg-red-500 text-white h-12 p-1  font-mono font-bold rounded-lg">
             {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.identifier} value={lang.identifier}>
                 {lang.name}
