@@ -15,7 +15,6 @@ export const useTrailerVedio = ({ movieId }) => {
       Api_options
     );
     const json = await data.json();
-    // console.log(json.results);
     if(json.results!==undefined){
       const Trailerfilter = json?.results.filter(
         (data) =>data!==undefined && data?.type ==="Trailer",

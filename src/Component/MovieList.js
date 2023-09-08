@@ -2,7 +2,6 @@ import React from "react";
 import MovieCart from "./MovieCart";
 
 const MovieList = ({ title, moviesdata }) => {
-  console.log(moviesdata);
   return (
     <div className="ml-6">
       <h1 className=" p-4 font-bold font-mono text-white text-xl  ">{title}</h1>
