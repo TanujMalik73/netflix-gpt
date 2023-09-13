@@ -107,13 +107,13 @@ const Login = () => {
             ref={email}
             className="w-full px-4 py-2 my-2 rounded-lg "
             type="text"
-            placeholder="Email or Phone number"
+            placeholder="Email"
           ></input>
           <input
             ref={password}
             className="w-full px-4 py-2 my-2 rounded-lg "
             type="password"
-            placeholder="password"
+            placeholder="Password"
           ></input>
           <p className="text-red-500 my-2 font-medium">{messwrongIdpass}</p>
           <button

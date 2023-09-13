@@ -71,7 +71,8 @@ const Header = () => {
           </button>
           <div>
             <img
-              className="w-12 h-12 rounded-lg"
+            onClick={handlesignout}
+              className="w-12 h-12 rounded-lg cursor-pointer"
               src={user?.photoURL}
               alt="userphoto"
             ></img>

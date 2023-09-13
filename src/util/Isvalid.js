@@ -3,7 +3,7 @@ export const Isvalid = (Email,password)=>{
     const checkpassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
 
     if(!checkEmail) return "Invalid Email ID"
-    if(!checkpassword) return "Invalid Password"
+    if(!checkpassword) return "Password Should Contain Alpha Numeric with Special Character"
      
     return null
 }
